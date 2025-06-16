@@ -11,7 +11,14 @@ function App() {
   console.log("i run all the time");
   useEffect(() => {
     console.log("CALL THE API");
-  }, []);
+  }, []); // 빈 array를 써주었을 때 코드가 단 한번만 실행되는 이유
+
+  useEffect(() => {
+    if (keyword !== "" && keyword.length > 5) {
+      console.log("SEACH FOR", keyword);
+    }
+  }, [keyword]); // keyword가 변화할 때 마다 코드가 항상실행
+
   return (
     <div>
       <input
