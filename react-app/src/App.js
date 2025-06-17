@@ -5,7 +5,8 @@ import { useState, useEffect } from "react";
 
 function Hello() {
   useEffect(() => {
-    console.log("Im here!");
+    console.log("created :)"); // 컴포넌트가 처음 나타날 때 실행
+    return () => console.log("destroy :("); // 컴포넌트가 사라질 때 실행
   }, []);
   return <h1>Hello</h1>;
 }
