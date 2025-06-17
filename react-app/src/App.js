@@ -4,10 +4,14 @@ import styles from "./App.module.css";
 import { useState, useEffect } from "react";
 
 function Hello() {
-  useEffect(() => {
-    console.log("created :)"); // 컴포넌트가 처음 나타날 때 실행
-    return () => console.log("destroy :("); // 컴포넌트가 사라질 때 실행
-  }, []);
+  function byFn() {
+    console.log("bye :(");
+  }
+  function hiFn() {
+    console.log("created :)"); // 컴포넌트 생성 시 실행
+    return byFn; // 컴포넌트 제거 시 실행할 함수 반환
+  }
+  useEffect(hiFn, []);
   return <h1>Hello</h1>;
 }
 
