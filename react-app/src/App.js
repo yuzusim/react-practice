@@ -7,16 +7,18 @@ import { useState } from "react";
 // const onChange = (event) => setToDo(event.target.value);는 입력한 값을 toDo 상태로 업데이트
 
 function App() {
-  const [toDo, setToDo] = useState("");
+  const [toDo, setToDo] = useState(""); // 입력값을 위한 상태
+  const [toDos, setToDos] = useState([]); // 여러 개의 할 일 목록을 저장하는 상태
   const onChange = (event) => setToDo(event.target.value);
   const onSubmit = (event) => {
-    event.preventDefault();
-    // console.log(toDo);
+    event.preventDefault(); // 폼 제출을 막기
     if (toDo === "") {
-      return;
+      return; // 아무것도 안했으면 중단
     }
-    setToDo("");
+    setToDo(""); // 할 일을 입력한 후 input을 다시 비움 (초기화)
   };
+  console.log(toDos); // toDos arry 확인
+
   return (
     <div>
       <form onSubmit={onSubmit}>
