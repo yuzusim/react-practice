@@ -1,6 +1,3 @@
-// import Button from "./Button";
-// import styles from "./App.module.css";
-
 import { useState } from "react";
 
 // input 생성 사용자 입력을 받음
@@ -12,15 +9,25 @@ import { useState } from "react";
 function App() {
   const [toDo, setToDo] = useState("");
   const onChange = (event) => setToDo(event.target.value);
-  console.log(toDo);
+  const onSubmit = (event) => {
+    event.preventDefault();
+    // console.log(toDo);
+    if (toDo === "") {
+      return;
+    }
+    setToDo("");
+  };
   return (
     <div>
-      <input
-        type="text"
-        onChange={onChange}
-        value={toDo}
-        placeholder="Write your to do..."
-      />
+      <form onSubmit={onSubmit}>
+        <input
+          type="text"
+          onChange={onChange}
+          value={toDo}
+          placeholder="Write your to do..."
+        />
+        <button>Add TO DO</button>
+      </form>
     </div>
   );
 }
