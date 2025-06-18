@@ -15,6 +15,7 @@ function App() {
     if (toDo === "") {
       return; // 아무것도 안했으면 중단
     }
+    setToDos((currentArray) => [toDo, ...currentArray]); //
     setToDo(""); // 할 일을 입력한 후 input을 다시 비움 (초기화)
   };
   console.log(toDos); // toDos arry 확인
