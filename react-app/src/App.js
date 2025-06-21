@@ -7,8 +7,12 @@ function App() {
   return (
     <Router>
       <Routes>
+        {/* <Route path="/Helo">
+          <h1>Hello</h1>
+        </Route> */}
+
+        <Route path="/movie/:id" element={<Detail />} />
         <Route path="/" element={<Home />} />
-        <Route path="/movie" element={<Detail />} />
       </Routes>
     </Router>
   );
