@@ -8,7 +8,6 @@ function Movie({ id, coverImg, title, summary, genres }) {
       <h2>
         <Link to={`/movie/${id}`}>{title}</Link>
         {/* <Link to="/movie">{title}</Link> */}
-        {/* <Link to={`/movie/${id}`}>{title}</Link> */}
       </h2>
       <p>{summary}</p>
       <ul>
