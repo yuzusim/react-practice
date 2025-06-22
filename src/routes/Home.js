@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Movie from "../components/Movie";
+import styles from "./Home.module.css";
 
 function Home() {
   const [loading, setLoading] = useState(true); // 현재 로딩 중인지 아닌지를 나타내는 상태 변수 (초기값: true)
@@ -29,11 +30,13 @@ function Home() {
 
   console.log(movies);
   return (
-    <div>
+    <div className={styles.container}>
       {loading ? (
-        <h1>loading..</h1>
+        <div className={styles.loader}>
+          <h1>loading..</h1>
+        </div>
       ) : (
-        <div>
+        <div className={styles.movies}>
           {movies.map((movie) => (
             <Movie
               key={movie.id}
